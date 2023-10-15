@@ -37,20 +37,8 @@ public class ClientesController {
 		return this.clienteService.clientesMod(cliente);
 	}
 	
-//	@DeleteMapping(value = "/borrar/{id}")
-//	public Boolean eliminarCliente (@PathVariable(value = "id") Integer idCliente) {
-//		return this.clienteService.borrarClientes(idCliente);
-//	}
-	
 	@DeleteMapping(value = "/borrar/{id}")
-	public Boolean eliminarCliente(@PathVariable(value = "id") String idCliente) {
-	    try {
-	        Integer id = Integer.parseInt(idCliente);
-	        return this.clienteService.borrarClientes(id);
-	    } catch (NumberFormatException e) {
-	        // Manejar el error de conversión de tipo aquí
-	        // Puedes lanzar una excepción personalizada o devolver un valor predeterminado, dependiendo de la lógica de tu aplicación.
-	        return false;
-	    }
-	}
+	public Boolean eliminarCliente (@PathVariable(value = "id") Integer idCliente) {
+		return this.clienteService.borrarClientes(idCliente);
+	}	
 }
