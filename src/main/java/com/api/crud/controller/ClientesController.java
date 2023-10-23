@@ -24,16 +24,19 @@ public class ClientesController {
 
 	@PostMapping("/nuevo")
 	public Clientes newClientes(@RequestBody Clientes newClientes) {
+
 		return this.clienteService.newCliente(newClientes);
 	}
 	
 	@GetMapping("/listar")
 	public Iterable <Clientes> getAll() {
+
 		return clienteService.getAll();
 	}
 	
 	@PutMapping("/actualizar")
 	public Clientes updateCliente(@RequestBody Clientes cliente) {
+
 		return this.clienteService.clientesMod(cliente);
 	}
 	
